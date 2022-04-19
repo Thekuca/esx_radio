@@ -1,5 +1,4 @@
-local radioMenu = false
-local onRadio = false
+local radioMenu, onRadio = false, false
 local RadioChannel = 0
 local RadioVolume = 50
 
@@ -29,8 +28,8 @@ local function connecttoradio(channel)
     if onRadio then
         exports["pma-voice"]:setRadioChannel(0)
     else
-        onRadio = true
         exports["pma-voice"]:setVoiceProperty("radioEnabled", true)
+	onRadio = true
     end
     exports["pma-voice"]:setRadioChannel(channel)
     if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
@@ -50,7 +49,7 @@ local function leaveradio()
     onRadio = false
     exports["pma-voice"]:setRadioChannel(0)
     exports["pma-voice"]:setVoiceProperty("radioEnabled", false)
-     Config.ClientNotification(Config.messages['you leave'] , 'error')
+    Config.ClientNotification(Config.messages['you leave'] , 'error')
 end
 
 local function toggleRadioAnimation(pState)
@@ -136,7 +135,7 @@ end)
 RegisterNUICallback("volumeUp", function()
 	if RadioVolume <= 95 then
 		RadioVolume = RadioVolume + 5
-		 Config.ClientNotification(Config.messages["volume radio"] .. RadioVolume, "success")
+		Config.ClientNotification(Config.messages["volume radio"] .. RadioVolume, "success")
 		exports["pma-voice"]:setRadioVolume(RadioVolume)
 	else
 		 Config.ClientNotification(Config.messages["decrease radio volume"], "error")
@@ -146,7 +145,7 @@ end)
 RegisterNUICallback("volumeDown", function()
 	if RadioVolume >= 10 then
 		RadioVolume = RadioVolume - 5
-		 Config.ClientNotification(Config.messages["volume radio"] .. RadioVolume, "success")
+		Config.ClientNotification(Config.messages["volume radio"] .. RadioVolume, "success")
 		exports["pma-voice"]:setRadioVolume(RadioVolume)
 	else
 		 Config.ClientNotification(Config.messages["increase radio volume"], "error")
@@ -156,7 +155,7 @@ end)
 RegisterNUICallback("increaseradiochannel", function(data, cb)
     local newChannel = RadioChannel + 1
     exports["pma-voice"]:setRadioChannel(newChannel)
-     Config.ClientNotification(Config.messages["increase decrease radio channel"] .. newChannel, "success")
+    Config.ClientNotification(Config.messages["increase decrease radio channel"] .. newChannel, "success")
 end)
 
 RegisterNUICallback("decreaseradiochannel", function(data, cb)
@@ -164,7 +163,7 @@ RegisterNUICallback("decreaseradiochannel", function(data, cb)
     local newChannel = RadioChannel - 1
     if newChannel >= 1 then
         exports["pma-voice"]:setRadioChannel(newChannel)
-         Config.ClientNotification(Config.messages["increase decrease radio channel"] .. newChannel, "success")
+        Config.ClientNotification(Config.messages["increase decrease radio channel"] .. newChannel, "success")
     end
 end)
 
