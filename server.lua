@@ -32,7 +32,7 @@ AddEventHandler('onResourceStart', function(resourceName)
     print(" Converted By Mycroft(Manager of ESX-Framework) & Benzo (Head of ESX Support)")
     print("             Website: https://docs.esx-framework.org         ")
     print("              TRClassic: https://dsc.gg/trclassic            ")
-    print("            Want more scripts? Visit https://modit.store :)  ")
+    print("            Want more scripts? Use Alt:V, fuck CFX.re :)     ")
     print("-------------------------------------------------------------------")                                                                                                                                
   end)
  
