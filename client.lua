@@ -154,16 +154,16 @@ end)
 
 RegisterNUICallback("increaseradiochannel", function(data, cb)
     RadioChannel = RadioChannel + 1
-    exports["pma-voice"]:setRadioChannel(newChannel)
-    Config.ClientNotification(Config.messages["increase decrease radio channel"] .. newChannel, "success")
+    exports["pma-voice"]:setRadioChannel(RadioChannel)
+    Config.ClientNotification(Config.messages["increase decrease radio channel"] .. RadioChannel, "success")
 end)
 
 RegisterNUICallback("decreaseradiochannel", function(data, cb)
     if not onRadio then return end
     RadioChannel = RadioChannel - 1
-    if newChannel >= 1 then
-        exports["pma-voice"]:setRadioChannel(newChannel)
-        Config.ClientNotification(Config.messages["increase decrease radio channel"] .. newChannel, "success")
+    if RadioChannel >= 1 then
+        exports["pma-voice"]:setRadioChannel(RadioChannel)
+        Config.ClientNotification(Config.messages["increase decrease radio channel"] .. RadioChannel, "success")
     end
 end)
 
