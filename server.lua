@@ -18,22 +18,6 @@ if Config.Item.Require then
 end
 
 
-AddEventHandler('onResourceStart', function(resourceName)
-    if (GetCurrentResourceName() ~= resourceName) then
-        return
-    end
-    print("-------------------------------------------------------------------")
-    print(" ███████╗███████╗██╗  ██╗    ██████╗  █████╗ ██████╗ ██╗ ██████╗ ")
-    print(" ██╔════╝██╔════╝╚██╗██╔╝    ██╔══██╗██╔══██╗██╔══██╗██║██╔═══██╗")
-    print(" █████╗  ███████╗ ╚███╔╝     ██████╔╝███████║██║  ██║██║██║   ██║")
-    print(" ██╔══╝  ╚════██║ ██╔██╗     ██╔══██╗██╔══██║██║  ██║██║██║   ██║")
-    print(" ███████╗███████║██╔╝ ██╗    ██║  ██║██║  ██║██████╔╝██║╚██████╔╝")
-    print(" ╚══════╝╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝ ╚═════╝ ")
-    print(" Converted By Mycroft (Director of ESX) & Benzo (Manager of ESX)")
-    print("             Website: https://docs.esx-framework.org         ")
-    print("              TRClassic: https://dsc.gg/trclassic            ")
-    print("   Visit store.rcore.cz/esx, Use creator code ESX for 10% off    ")
-    print("-------------------------------------------------------------------")                                                                                                                                
-  end)
- 
+                                                                                          
+
  
