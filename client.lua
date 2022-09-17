@@ -1,3 +1,4 @@
+--- For Support join https://discord.gg/pyKDCByzUk
 local radioMenu, onRadio = false, false
 local RadioChannel = 0
 local RadioVolume = 50
