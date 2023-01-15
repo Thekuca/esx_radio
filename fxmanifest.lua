@@ -7,12 +7,9 @@ version '2.0.0'
 
 shared_scripts  {'@es_extended/imports.lua', 'config.lua'}
 
-client_scripts {
-  'client.lua',
-  'animation.lua'
-}
-
 server_script 'server.lua'
+
+client_scripts {'client.lua','animation.lua'}
 
 ui_page('html/ui.html')
 
