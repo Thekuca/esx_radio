@@ -76,23 +76,17 @@ RegisterNUICallback('leaveRadio', function(_, _)
 end)
 
 RegisterNUICallback("volumeUp", function()
-	if radioVolume <= 95 then
-		radioVolume = radioVolume + 5
-		ESX.ShowNotification(TODO["volume radio"] .. radioVolume, "success")
-		exports["pma-voice"]:setRadioVolume(radioVolume)
-	else
-		 ESX.ShowNotification(TODO["decrease radio volume"], "error")
-	end
+	if radioVolume >= 100 then return ESX.ShowNotification(TODO["decrease radio volume"]) end
+	radioVolume = radioVolume + 5
+	ESX.ShowNotification(TODO["volume radio"] .. radioVolume, "success")
+	exports["pma-voice"]:setRadioVolume(radioVolume)
 end)
 
 RegisterNUICallback("volumeDown", function()
-	if radioVolume >= 10 then
-		radioVolume = radioVolume - 5
-		ESX.ShowNotification(TODO["volume radio"] .. radioVolume)
-		exports["pma-voice"]:setRadioVolume(radioVolume)
-	else
-		 ESX.ShowNotification(TODO["increase radio volume"], "error")
-	end
+	if radioVolume <= 5 then return ESX.ShowNotification(TODO["increase radio volume"]) end
+	radioVolume = radioVolume - 5
+	ESX.ShowNotification(TODO["volume radio"] .. radioVolume)
+	exports["pma-voice"]:setRadioVolume(radioVolume)
 end)
 
 RegisterNUICallback("increaseradiochannel", function(_, _)
